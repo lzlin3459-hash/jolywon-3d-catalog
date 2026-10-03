@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101e1a">
+  <title>匠力王 · 3D 产品手册样板</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='4' fill='%23214b38'/%3E%3Ctext x='20' y='28' text-anchor='middle' font-size='25' fill='white'%3E匠%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="./src/style.css">
+  <script type="importmap">{"imports":{"three":"./vendor/three/build/three.module.js","three/addons/":"./vendor/three/examples/jsm/"}}</script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="./" aria-label="匠力王首页"><span class="brand-mark">匠</span><span>匠力王<small>JOLYWON</small></span></a>
+    <span class="header-caption">产品交互手册 <span class="dot"></span> 外观样板</span>
+    <a class="header-link" href="./catalog.html">查看产品目录 <span>↗</span></a>
+  </header>
+
+  <main>
+    <section class="product-section" aria-labelledby="product-title">
+      <div class="product-intro">
+        <p class="eyebrow"><span></span> 碳基产品系列 / 01</p>
+        <h1 id="product-title">复合拉毛<em>背胶</em><span class="title-dot">。</span></h1>
+        <p class="english-title">COMPOSITE BONDING PRIMER</p>
+        <p class="intro-copy">用于界面拉毛处理。<br>了解产品用途，也看清每一面包装。</p>
+        <div class="intro-rule"></div>
+        <dl class="product-facts"><div><dt>品牌</dt><dd>匠力王</dd></div><div><dt>包装标注净含量</dt><dd>16 kg</dd></div><div><dt>展示</dt><dd>360° 外观</dd></div></dl>
+        <a href="#overview" class="primary-link">了解产品与用途 <span>↓</span></a>
+        <p class="sample-note">外观示意样板 · 尺寸及包装版本待确认</p>
+      </div>
+
+      <div class="viewer-panel">
+        <div class="viewer-heading"><span>PRODUCT EXPLORER</span><span class="live-label"><i></i> 3D 展台</span></div>
+        <div id="viewer" role="region" aria-label="产品三维展示：拖动旋转，滚轮或双指缩放">
+          <img id="fallback" src="./效果图/1.jpg" alt="复合拉毛背胶正面包装图">
+          <p id="loading" role="status">正在准备产品展台…</p>
+          <span class="viewer-watermark" aria-hidden="true">JOLYWON</span>
+          <div class="viewer-hint" id="viewer-hint">↔ 拖动旋转 <span>·</span> 滚轮 / 双指缩放</div>
+        </div>
+        <div class="viewer-toolbar" aria-label="产品视角控制">
+          <div class="view-tabs"><button data-view="0" aria-pressed="true">正面</button><button data-view="1" aria-pressed="false">侧面</button><button data-view="2" aria-pressed="false">背面</button><button data-view="3" aria-pressed="false">接缝</button></div>
+          <div class="view-tools"><button id="rotate" aria-pressed="false" title="自动旋转">自动旋转</button><button id="reset" title="恢复正面及默认大小">↺ 复位</button></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="overview-section" id="overview" aria-labelledby="overview-title">
+      <div class="section-heading"><div><p class="eyebrow">PRODUCT INTRODUCTION</p><h2 id="overview-title">先了解用途，再看产品细节。</h2></div><a class="source-link" href="./效果图/1.jpg" target="_blank" rel="noopener">依据包装标注整理 ↗</a></div>
+      <div class="overview-grid">
+        <article class="purpose-card"><span class="info-label">产品用途</span><h3>界面拉毛处理</h3><p>包装说明提及光滑基面的界面拉毛处理。具体适用条件及施工要求，请查阅正式产品说明。</p><span class="purpose-number" aria-hidden="true">01</span></article>
+        <article class="weight-card"><span class="info-label">包装标注净含量</span><p class="weight-number">16<span>kg</span></p><p>桶装包装，规格以当前产品标签为准。</p></article>
+      </div>
+      <div class="feature-grid">
+        <article><span class="info-label">包装特点 / 01</span><h3>水性配方</h3><p>背标产品特点栏标注“本品为水性”。</p></article>
+        <article><span class="info-label">包装特点 / 02</span><h3>滚涂拉毛</h3><p>背标介绍通过滚涂制作毛糙界面。</p></article>
+      </div>
+      <div class="materials-heading"><h3>包装列明的应用基面</h3><span>应用基面示意</span></div>
+      <div class="materials-grid">
+        <article><span class="material-icon tiles" aria-hidden="true"></span><div><h4>陶瓷砖</h4><p>包装所列基面之一</p></div></article>
+        <article><span class="material-icon concrete" aria-hidden="true"></span><div><h4>混凝土墙</h4><p>包装所列基面之一</p></div></article>
+        <article><span class="material-icon waterproof" aria-hidden="true"></span><div><h4>防水层</h4><p>包装所列基面之一</p></div></article>
+      </div>
+      <div class="usage-note" id="usage"><div><span class="info-label">使用资料</span><h3>施工方法与注意事项</h3><p>产品背标包含这两类信息。查看清晰原图，具体配比与施工步骤在企业核实后整理进手册。</p></div><a href="./效果图/1背.jpg" target="_blank" rel="noopener">查看背面使用说明 ↗</a></div>
+    </section>
+
+    <section class="application-section" aria-labelledby="application-title">
+      <div class="section-heading"><div><p class="eyebrow">APPLICATION DEMONSTRATION</p><h2 id="application-title">滚涂拉毛，用三维看懂。</h2></div><span class="source-link">用途示意 · 非真实施工案例</span></div>
+      <div class="application-layout">
+        <div class="application-copy"><p>依据背标“通过滚涂制作毛糙界面”的说明，展示产品的应用概念。</p><div class="application-steps"><button data-application-step="0" aria-pressed="true">01 光滑基面</button><button data-application-step="1" aria-pressed="false">02 滚涂示意</button><button data-application-step="2" aria-pressed="false">03 表面示意</button></div><button id="application-play" aria-pressed="true">暂停示意</button><p class="application-disclaimer">图示颜色与粗糙度用于区分状态，不代表实际材料外观、配比、厚度或施工时间。操作要求以正式产品说明为准。</p><a class="source-link" href="./效果图/1背.jpg" target="_blank" rel="noopener">查看背标依据 ↗</a></div>
+        <div id="application-viewer" role="region" aria-label="滚涂拉毛三维示意"><span id="application-status" role="status">准备三维示意…</span></div>
+      </div>
+    </section>
+
+    <section class="reference-section" id="reference" aria-labelledby="reference-title">
+      <div class="section-heading"><div><p class="eyebrow">PACKAGING DETAILS</p><h2 id="reference-title">每一面，都看得见。</h2></div><p>点击原图，查看包装细节。</p></div>
+      <div class="reference-grid">
+        <a href="./效果图/1.jpg" target="_blank" rel="noopener"><div><img src="./效果图/1.jpg" alt="正面包装原图" loading="lazy"></div><span>01 / 正面 <b>↗</b></span></a>
+        <a href="./效果图/1侧.jpg" target="_blank" rel="noopener"><div><img src="./效果图/1侧.jpg" alt="侧面包装原图" loading="lazy"></div><span>02 / 侧面 <b>↗</b></span></a>
+        <a href="./效果图/1背.jpg" target="_blank" rel="noopener"><div><img src="./效果图/1背.jpg" alt="背面包装原图" loading="lazy"></div><span>03 / 背面 <b>↗</b></span></a>
+        <a href="./效果图/1接缝.jpg" target="_blank" rel="noopener"><div><img src="./效果图/1接缝.jpg" alt="标签接缝原图" loading="lazy"></div><span>04 / 接缝 <b>↗</b></span></a>
+      </div>
+      <div class="reference-note"><span>样板说明</span><p>外观与介绍依据现有包装效果图制作，尺寸、包装版本及文案待企业核对。标签存在近似映射误差，请以包装原图及正式产品资料为准。</p><a href="./be25286f70af3908ef695da403604c99.jpg" target="_blank" rel="noopener">查看宣传海报 ↗</a></div>
+    </section>
+    <section class="contact-section" id="contact" aria-labelledby="contact-title"><div><p class="eyebrow">COMPANY INFORMATION</p><h2 id="contact-title">佛山匠力王科技有限公司</h2><p>企业名称与服务热线依据现有包装背标整理，待核对最新信息。</p></div><div class="contact-phone"><span>包装标注服务热线</span><a href="tel:4000685866">400-068-5866 ↗</a><small>内部样板 · 暂无确认的公网网站入口</small></div></section>
+  </main>
+  <footer><span>匠力王 · 产品交互手册</span><span>单产品展示样板 / 2026</span></footer>
+  <script type="module" src="./src/app.js"></script>
+  <script type="module" src="./src/application.js"></script>
+</body>
+</html>

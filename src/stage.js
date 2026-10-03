@@ -1,0 +1,42 @@
+import * as THREE from 'three';
+
+export function createStage(canvas, transparent = true) {
+  const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: transparent, preserveDrawingBuffer: true });
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
+  renderer.setClearColor('#e7eddf', transparent ? 0 : 1);
+  renderer.outputColorSpace = THREE.SRGBColorSpace;
+  renderer.toneMapping = THREE.ACESFilmicToneMapping;
+  renderer.toneMappingExposure = 1.25;
+  renderer.shadowMap.enabled = true;
+  renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+  const scene = new THREE.Scene();
+  const camera = new THREE.PerspectiveCamera(35, 1, 0.1, 100);
+  scene.add(new THREE.HemisphereLight('#fff8e8', '#687862', 2.1));
+  const key = new THREE.DirectionalLight('#fff8e9', 3.7);
+  key.position.set(-3, 7, 5);
+  key.castShadow = true;
+  key.shadow.mapSize.set(2048, 2048);
+  key.shadow.camera.left = -5;
+  key.shadow.camera.right = 5;
+  key.shadow.camera.top = 5;
+  key.shadow.camera.bottom = -5;
+  key.shadow.normalBias = 0.025;
+  scene.add(key);
+  const fill = new THREE.DirectionalLight('#edf7ff', 1.9);
+  fill.position.set(4, 3, -3);
+  scene.add(fill);
+  const soft = new THREE.DirectionalLight('#ffffff', 0.9);
+  soft.position.set(1, 1, 6);
+  scene.add(soft);
+  const pedestal = new THREE.Mesh(new THREE.CylinderGeometry(1.48, 1.5, 0.13, 96), new THREE.MeshStandardMaterial({ color: '#c9d3c0', roughness: 0.72 }));
+  pedestal.position.y = -1.41;
+  pedestal.receiveShadow = true;
+  pedestal.castShadow = true;
+  scene.add(pedestal);
+  const floor = new THREE.Mesh(new THREE.PlaneGeometry(200, 200), new THREE.ShadowMaterial({ opacity: 0.12 }));
+  floor.rotation.x = -Math.PI / 2;
+  floor.position.y = -1.48;
+  floor.receiveShadow = true;
+  scene.add(floor);
+  return { renderer, scene, camera, pedestal };
+}
